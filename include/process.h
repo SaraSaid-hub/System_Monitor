@@ -9,7 +9,7 @@ It contains relevant attributes as shown below
 */
 class Process {
  public:
-  Process(int pid) :PID_(pid),USER_(LinuxParser::User(pid)),CPUP_(Process::CpuUtilization()),COMMAND(LinuxParser::Command(pid)),RAM(LinuxParser::Ram(pid)),
+  Process(int pid) :PID_(pid),USER_(LinuxParser::User(pid)),CPUP_(Process::CpuUtilization()),COMMAND_(LinuxParser::Command(pid)),RAM_(LinuxParser::Ram(pid)),
  TTIME_(LinuxParser::UpTime(pid)) {}
   
   int Pid();                               // TODO: See src/process.cpp
@@ -25,9 +25,9 @@ class Process {
   int PID_;
  std::string USER_;
  float CPUP_;
- string RAM;
+ std::string RAM_;
  long TTIME_;
- std::string COMMAND;
+ std::string COMMAND_;
 };
 
 #endif
