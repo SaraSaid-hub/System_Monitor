@@ -22,7 +22,7 @@ vector<Process>& System::Processes() {
   for (int i=0; i<Processes_pid.size();i++ ){
     processes_.push_back(Process(Processes_pid[i]));
   }
-  sort(Processes_pid.begin(),Processes_pid.end(),[](Process p1, Process p2){return p1<p2;});
+  sort(processes_.begin(),processes_.end(),[](Process p1, Process p2){return p1<p2;});
   return processes_; }
 
 // TODO: Return the system's kernel identifier (string)
