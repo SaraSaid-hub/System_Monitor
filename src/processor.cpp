@@ -21,5 +21,6 @@ float Processor::Utilization() { vector<string> cpu_string=LinuxParser::CpuUtili
     float Idle=cpu_float[LinuxParser::CPUStates::kIdle_]+cpu_float[LinuxParser::CPUStates::kIOwait_];
 
     float Total=NonIdle+Idle;
+      if(Total>0)                          
      cpu_percentage=(Total-Idle)/Total;
     return cpu_percentage; }
