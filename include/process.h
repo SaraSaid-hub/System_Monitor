@@ -9,7 +9,7 @@ It contains relevant attributes as shown below
 */
 class Process {
  public:
-  Process(int pid) :PID_(pid),USER_(LinuxParser::User(pid)),CPUP_(Process::CpuUtilization()),COMMAND_(LinuxParser::Command(pid)),RAM_(LinuxParser::Ram(pid)),
+  Process(int pid) :PID_(pid),USER_(LinuxParser::User(pid)),CPUP_(Process::CpuUtilization()),COMMAND_(LinuxParser::Command(pid)),
  TTIME_(LinuxParser::UpTime(pid)) {}
   
   int Pid();                               // TODO: See src/process.cpp
