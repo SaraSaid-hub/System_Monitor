@@ -68,7 +68,6 @@ vector<int> LinuxParser::Pids() {
 
 // TODO: Read and return the system memory utilization
 float LinuxParser::MemoryUtilization() { 
-
   string line;
   string key;
   float value;
@@ -90,14 +89,9 @@ float LinuxParser::MemoryUtilization() {
               perc_Used_mem=(Total_mem - Free_mem)/(Total_mem);
               return perc_Used_mem;
         }
-        
       }
     }
-  }
-  
- 
-
-
+  } 
 }
 
 // TODO: Read and return the system uptime
@@ -266,7 +260,7 @@ string LinuxParser::Ram(int pid) {
     while (std::getline(filestream, line)) {
       std::istringstream linestream(line);
       while (linestream >> key >> value) {
-        if (key == "VmSize") {
+        if (key == "VmSize:") {
       int mem_megabyte=(std::stoi(value))/1000;
       string mem=std::to_string(mem_megabyte);
           return mem;
