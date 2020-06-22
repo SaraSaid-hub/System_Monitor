@@ -18,9 +18,9 @@ float Processor::Utilization() { vector<string> cpu_string=LinuxParser::CpuUtili
     cpu_float[LinuxParser::CPUStates::kSystem_]+cpu_float[LinuxParser::CPUStates::kIRQ_]+
     cpu_float[LinuxParser::CPUStates::kSoftIRQ_]+cpu_float[LinuxParser::CPUStates::kSteal_];
 
-    float Idle=cpu_float[LinuxParser::CPUStates::kIdle_]+cpu_float[LinuxParser::CPUStates::kIOwait_];
-
-    float Total=NonIdle+Idle;
+     float Idle=cpu_float[LinuxParser::CPUStates::kIdle_]+cpu_float[LinuxParser::CPUStates::kIOwait_];
+     float Total=NonIdle+Idle;
       if(Total>0)                          
      cpu_percentage=(Total-Idle)/Total;
-    return cpu_percentage; }
+    return cpu_percentage;                           
+    }
