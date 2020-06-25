@@ -41,7 +41,7 @@ string LinuxParser::Kernel() {
   if (stream.is_open()) {
     std::getline(stream, line);
     std::istringstream linestream(line);
-    linestream >> os >> kernel;
+    linestream >> os >> version>> kernel;
   }
   return kernel;
 }
@@ -91,7 +91,8 @@ float LinuxParser::MemoryUtilization() {
         }
       }
     }
-  } 
+  }
+  return 0.0;
 }
 
 // TODO: Read and return the system uptime
@@ -153,7 +154,7 @@ long LinuxParser::ActiveJiffies(int pid) {
     
     
   }
-    
+  return 0;  
   
    }
 
@@ -185,7 +186,7 @@ vector<string> LinuxParser::CpuUtilization() {
      }  
 
   }
-  
+  return {};
    }
 
 // TODO: Read and return the total number of processes
@@ -207,7 +208,7 @@ int LinuxParser::TotalProcesses() {
     }
   }
   
-  
+  return 0;
    }
 
 // TODO: Read and return the number of running processes
@@ -229,7 +230,7 @@ int LinuxParser::RunningProcesses() {
     }
   }
   
-  
+  return 0;
    }
 
 // TODO: Read and return the command associated with a process
@@ -291,7 +292,7 @@ string LinuxParser::Uid(int pid) {
       }
     }
   }
-  
+  return "";
    }
 
 // TODO: Read and return the user associated with a process
@@ -316,6 +317,7 @@ string LinuxParser::User(int pid) {
       }
     }
   }
+  return "";
   }
 
 // TODO: Read and return the uptime of a process
@@ -347,8 +349,6 @@ long LinuxParser::UpTime(int pid) {
        
     }
     
-  
-    
-
   }
+  return 0;
    }
