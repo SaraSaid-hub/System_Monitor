@@ -14,9 +14,9 @@ string Format::ElapsedTime(long seconds) {
   
   
     int hours=seconds/3600;
+    seconds=seconds%3600;
     int mins=seconds/60;
-    int secs=seconds%3600;
-    secs=secs%60;
+    int secs=seconds%60;
     
     return to_string(hours)+ ':'+to_string(mins)+':'+to_string(secs);
   }
