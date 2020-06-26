@@ -20,7 +20,7 @@ Processor& System::Cpu() { return cpu_; }
 vector<Process>& System::Processes() { 
   processes_.clear();  
   vector<int> Processes_pid=LinuxParser::Pids();
-  for (long i=0; i<Processes_pid.size();i++ ){
+  for (unsigned int i=0; i<Processes_pid.size();i++ ){
     processes_.push_back(Process(Processes_pid[i]));
   }
   sort(processes_.begin(),processes_.end(),[](Process p1, Process p2){return p1<p2;});
