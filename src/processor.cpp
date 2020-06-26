@@ -9,7 +9,7 @@ using std::string;
 // TODO: Return the aggregate CPU utilization
 float Processor::Utilization() { vector<string> cpu_string=LinuxParser::CpuUtilization();
     vector<float> cpu_float;
-    for(int i=0;i< cpu_string.size();i++){
+    for( unsigned int i=0;i< cpu_string.size();i++){
  
        float x= std::stof(cpu_string[i]);
         cpu_float.push_back(x);
